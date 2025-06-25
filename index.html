@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open English: El No-Curso</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP & ScrollTrigger for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #34D399, #0070F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .feature-card {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(0, 112, 243, 0.15) 0%, transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section text-center p-6">
+        <div>
+            <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter" id="hero-title">
+                <span class="block">Esto no es un</span>
+                <span class="gradient-text block">Curso de Inglés.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mt-6" id="hero-subtitle">
+                Es un ecosistema de fluidez. Diseñado para tu vida, no para un aula.
+            </p>
+        </div>
+    </section>
+
+    <!-- SLOGAN SECTION -->
+    <section class="py-20 text-center px-6">
+        <p id="slogan-pre-title" class="text-xl font-semibold uppercase tracking-wider mb-4">Eslogan</p>
+        <h2 class="text-4xl md:text-7xl font-black uppercase tracking-tighter" id="slogan">
+            El aprendizaje ha evolucionado. Tu inglés también.
+        </h2>
+    </section>
+
+    <!-- DECONSTRUCTION SECTION -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-oe-blue font-semibold uppercase tracking-wider">La Deconstrucción</p>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2">¿Por qué es un "No-Curso"?</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Porque rompemos las reglas de la educación tradicional para darte un sistema que realmente funciona.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Principio 1: Flujo Continuo -->
+                <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Un Ecosistema Siempre Activo</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        Aquí no te adaptas a un horario, el sistema de **flujo continuo** se adapta a tu vida, 24/7.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-horarios">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Agenda 24/7</p>
+                        <p class="text-white font-semibold">Tu Dashboard:</p>
+                        <div class="mt-2 p-3 bg-gray-900 rounded-md">
+                            <p class="text-gray-300">Próxima clase en vivo disponible:</p>
+                            <p class="text-2xl font-bold text-green-400">3 Minutos</p>
+                            <p class="text-sm text-gray-500 mt-1">Tema: Conversación Casual - Viajes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principio 2: Comunidad Conectada -->
+                <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Una Comunidad, No Solo un Software</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        Creemos en el poder de la conexión. Aquí practicas en una **comunidad global** con personas reales.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-comunidad">
+                         <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Interfaz de Clase</p>
+                        <p class="text-white font-semibold">Tu Clase en Vivo:</p>
+                        <div class="mt-2 p-3 bg-gray-900 rounded-md grid grid-cols-3 gap-2">
+                            <div class="text-center"><div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Profesor<br/>David (UK)</p></div>
+                            <div class="text-center"><div class="w-12 h-12 bg-green-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Tú</p></div>
+                            <div class="text-center"><div class="w-12 h-12 bg-purple-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Ana (COL)</p></div>
+                            <div class="text-center"><div class="w-12 h-12 bg-yellow-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Pedro (MEX)</p></div>
+                            <div class="text-center"><div class="w-12 h-12 bg-pink-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Sofía (ARG)</p></div>
+                            <div class="text-center"><div class="w-12 h-12 bg-red-500 rounded-full mx-auto mb-1"></div><p class="text-xs">Carlos (PER)</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principio 3: Rutas Personalizadas -->
+                <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Tu Ruta, Tu Decisión</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        No hay un camino único. Eliges tu objetivo y el sistema crea **infinitas rutas personalizadas** para ti.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-caminos">
+                         <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Módulos de Especialización</p>
+                        <p class="text-white font-semibold">Elige tu enfoque:</p>
+                        <div class="mt-2 space-y-2">
+                           <button class="w-full text-left p-2 bg-gray-900 rounded-md hover:bg-blue-600 transition-colors">Inglés Profesional</button>
+                           <button class="w-full text-left p-2 bg-gray-900 rounded-md hover:bg-blue-600 transition-colors">Preparación para Viajes</button>
+                           <button class="w-full text-left p-2 bg-gray-900 rounded-md hover:bg-blue-600 transition-colors">Práctica de Conversación</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Principio 4: Entrenamiento para la Vida Real -->
+                <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Entrenamiento para la Vida Real</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        No te preparamos para un examen, te preparamos para el mundo. Aquí **simulas conversaciones reales** con nuestra IA.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-vida-real">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Simulación con IA</p>
+                        <p class="text-white font-semibold">Tú le pides a Jenny:</p>
+                        <div class="mt-2 p-3 bg-gray-900 rounded-md">
+                           <p class="text-blue-400 font-semibold">> Simula una entrevista de trabajo para un puesto de Marketing.</p>
+                           <p class="text-green-400 mt-2 font-semibold">&lt; Jenny: Entendido. Comencemos. "So, tell me about your experience with digital campaigns..."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Principio 5: Contenido Vivo -->
+                <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Contenido que Vive en el Presente</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        El mundo cambia todos los días. Tu inglés también debería. Aprendes con **contenido vivo y relevante**.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-relevancia">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Temas de Clase</p>
+                        <p class="text-white font-semibold">Temas de Clases Disponibles Hoy:</p>
+                         <div class="mt-2 space-y-2">
+                           <p class="p-2 bg-gray-900 rounded-md text-sm">Análisis de la última keynote de Apple</p>
+                           <p class="p-2 bg-gray-900 rounded-md text-sm">Debate: ¿Quién ganará el Mundial?</p>
+                           <p class="p-2 bg-gray-900 rounded-md text-sm">Letras y significados del nuevo álbum de Taylor Swift</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Principio 6: Aprendizaje Activo -->
+                 <div class="p-8 bg-[#111] rounded-2xl border border-gray-800 flex flex-col">
+                    <h3 class="text-2xl font-bold mb-4">Un Gimnasio de Fluidez</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed flex-grow">
+                        Aquí no solo consumes información, **entrenas tus habilidades** y ves tu progreso en tiempo real.
+                    </p>
+                    <div class="mt-6 p-4 bg-black rounded-lg border border-gray-700" id="demo-activo">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Demostración Técnica: Herramienta de Pronunciación</p>
+                        <p class="text-white font-semibold">Entrenando tu pronunciación:</p>
+                        <div class="mt-2 p-3 bg-gray-900 rounded-md">
+                           <p class="text-gray-300">Frase: <span class="italic">"I live in a comfortable apartment."</span></p>
+                           <p class="text-gray-500 mt-2">Intento 1:</p>
+                           <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-red-500 h-2.5 rounded-full" style="width: 45%"></div></div>
+                           <p class="text-gray-500 mt-2">Intento 2:</p>
+                           <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-yellow-500 h-2.5 rounded-full" style="width: 75%"></div></div>
+                           <p class="text-gray-500 mt-2">Intento 3:</p>
+                           <div class="w-full bg-gray-700 rounded-full h-2.5"><div class="bg-green-500 h-2.5 rounded-full" style="width: 95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Y MUCHO MÁS -->
+            <div class="text-center mt-20" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-2xl font-bold text-gray-500 tracking-wider">
+                    ... y esto es solo el comienzo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SINERGIA HUMANO-IA SECTION -->
+    <section class="py-24 px-6 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-oe-blue font-semibold uppercase tracking-wider">El Diferenciador Clave</p>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2">La Sinergia Humano-IA</h2>
+                <p class="text-gray-400 mt-4 max-w-3xl mx-auto">Así es como combinamos lo mejor de dos mundos para que nunca te estanques. Este es el ciclo de aprendizaje integrado que define nuestra experiencia.</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Linea conectora -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800"></div>
+
+                <div class="grid md:grid-cols-2 gap-8 relative">
+                    <!-- PASO 1: HUMANO -->
+                    <div class="feature-card z-10" id="step1">
+                        <span class="absolute top-4 right-4 text-5xl font-black text-gray-800">01</span>
+                        <h3 class="text-2xl font-bold mb-3">Interacción Humana</h3>
+                        <p class="text-gray-400 mb-6">En una clase en vivo, cometes un error común y divertido. El profesor lo corrige con empatía.</p>
+                        <div class="p-4 bg-black rounded-lg border border-gray-700">
+                             <p class="font-mono text-sm text-gray-500 mb-2">// Escenario: Clase en vivo</p>
+                             <p class="text-gray-300">Tú dices: <span class="text-yellow-400">"Teacher, I'm very boring."</span></p>
+                             <p class="text-gray-300 mt-2">Profesor (con una sonrisa): <span class="text-green-400">"Oh, I'm sure you're not boring at all! If you FEEL that way, you can say 'I'm borED'."</span></p>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2: IA -->
+                    <div class="feature-card z-10" id="step2">
+                        <span class="absolute top-4 right-4 text-5xl font-black text-gray-800">02</span>
+                        <h3 class="text-2xl font-bold mb-3">Refuerzo con la IA</h3>
+                        <p class="text-gray-400 mb-6">Más tarde, para asegurarte, le pides a Jenny que te dé más ejemplos sobre la diferencia entre "-ing" y "-ed".</p>
+                        <div class="p-4 bg-black rounded-lg border border-gray-700">
+                            <p class="font-mono text-sm text-gray-500 mb-2">// Interfaz de IA Jenny</p>
+                            <p class="text-blue-400 font-semibold">> Dame ejemplos de adjetivos con -ing vs -ed</p>
+                            <p class="text-green-400 mt-2 font-semibold">&lt; Jenny: ¡Claro! "The movie is borING" (La película es aburrida). "I am borED" (Estoy aburrido). El "-ing" describe la cosa, el "-ed" describe cómo te sientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVERTISING APPROACH SECTION -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-oe-blue font-semibold uppercase tracking-wider">La Ejecución</p>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2">Enfoque Publicitario 360°</h2>
+                <p class="text-gray-400 mt-4 max-w-3xl mx-auto">Nuestra estrategia no se basa en anuncios tradicionales. Creamos un ecosistema de contenido que demuestra el método "No-Curso" en cada plataforma.</p>
+            </div>
+            <div class="space-y-12">
+                <!-- YouTube Series -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">1. Contenido de Marca: La Serie Documental</h3>
+                        <p class="text-lg text-gray-300 mb-4"><strong>Canal:</strong> YouTube</p>
+                        <p class="text-gray-400 leading-relaxed"><strong>Formato: "Proyecto Fluidez"</strong>. Una serie documental que sigue el viaje de 6 meses de 3-4 estudiantes reales. Cada episodio (10-15 min) combina su historia de transformación personal con grabaciones de pantalla de su interacción con la plataforma, demostrando cómo las herramientas técnicas son el catalizador directo de sus logros.</p>
+                    </div>
+                    <div class="p-4 bg-[#111] rounded-2xl border border-gray-800" data-aos="fade-left">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Estructura de un Episodio</p>
+                        <p class="text-white"><strong>Ep. 2: "La Entrevista"</strong></p>
+                        <ul class="mt-2 text-gray-400 list-disc list-inside space-y-1 text-sm">
+                            <li>Introducción: Ana tiene una entrevista de trabajo en dos semanas.</li>
+                            <li>Demostración Técnica: Vemos su pantalla usando el módulo de "Inglés de Negocios" y simulando la entrevista con la IA Jenny.</li>
+                            <li>Clímax: Ana realiza la entrevista real.</li>
+                            <li>Resultado: Muestra el correo de aceptación.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Short-form Video -->
+                 <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="p-4 bg-[#111] rounded-2xl border border-gray-800 order-2 md:order-1" data-aos="fade-right">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Ejemplo: TikTok/Reel</p>
+                        <p class="text-white"><strong>Título: "El botón de OE que no conocías"</strong></p>
+                         <div class="mt-2 p-3 bg-black rounded-md">
+                           <p class="text-sm text-gray-300">Un video de 15s mostrando (vía grabación de pantalla) cómo usar el filtro de "clases por tema" para encontrar una lección sobre "Cine y Series". Pura utilidad, 0% venta.</p>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">2. Micro-Demostraciones de Alto Impacto</h3>
+                        <p class="text-lg text-gray-300 mb-4"><strong>Canales:</strong> TikTok, Reels, YouTube Shorts, CTV.</p>
+                        <p class="text-gray-400 leading-relaxed">No son anuncios, son **"Hacks de Fluidez"**. Videos de 6 a 15 segundos que muestran una única función resolviendo un problema. La edición es rápida y satisfactoria, diseñada para capturar la atención al instante y comunicar valor, haciéndolos imposibles de ignorar.</p>
+                    </div>
+                </div>
+
+                 <!-- Stories -->
+                 <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">3. Contenido Efímero: Historias Interactivas</h3>
+                        <p class="text-lg text-gray-300 mb-4"><strong>Canales:</strong> Instagram Stories, Facebook Stories.</p>
+                        <p class="text-gray-400 leading-relaxed">Usamos las historias para la interacción diaria y la conversación. Encuestas, quizzes y sesiones de "Preguntas y Respuestas" con profesores o el equipo de producto. Mostramos el "detrás de cámaras" de una clase en vivo o fragmentos de la serie "Proyecto Fluidez" para generar expectación.</p>
+                    </div>
+                    <div class="p-4 bg-[#111] rounded-2xl border border-gray-800" data-aos="fade-left">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Ejemplo: Secuencia de Historias</p>
+                        <p class="text-white"><strong>Tema: ¿Miedo a tu pronunciación?</strong></p>
+                         <div class="mt-2 p-3 bg-black rounded-md">
+                           <ul class="text-sm text-gray-300 list-disc list-inside space-y-1">
+                               <li>Historia 1: Encuesta - "¿Qué palabra te cuesta más pronunciar?".</li>
+                               <li>Historia 2: Video de 15s mostrando la herramienta de corrección de voz en acción con esa palabra.</li>
+                               <li>Historia 3: Sticker de "Pregúntame algo" para que la gente envíe más palabras.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Static Content & Community -->
+                 <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="p-4 bg-[#111] rounded-2xl border border-gray-800 order-2 md:order-1" data-aos="fade-right">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Ejemplo: Carrusel de Instagram</p>
+                        <p class="text-white"><strong>Título: "Deja de decir 'I'm boring'. Te explicamos cómo."</strong></p>
+                        <ul class="mt-2 text-gray-400 list-disc list-inside space-y-1 text-sm">
+                            <li>Slide 1: Gráfico: <span class="line-through text-red-500">I'm boring</span> vs. <span class="text-green-400">I'm bored</span>.</li>
+                            <li>Slide 2: Paso 1: Entiende la regla en una clase en vivo. (Captura de pantalla de la pizarra virtual).</li>
+                            <li>Slide 3: Paso 2: Refuerza con la IA. (Captura de pantalla de la respuesta de Jenny).</li>
+                            <li>Slide 4: Paso 3: Entrena tu pronunciación. (Captura de la herramienta de voz).</li>
+                        </ul>
+                    </div>
+                    <div class="order-1 md:order-2" data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">4. Contenido de Valor: Posts y Carruseles</h3>
+                        <p class="text-lg text-gray-300 mb-4"><strong>Canales:</strong> Instagram, Facebook, LinkedIn.</p>
+                        <p class="text-gray-400 leading-relaxed">Nuestro feed se convierte en una fuente de recursos. Los **carruseles de Instagram** son **guías prácticas** que enseñan a resolver un problema real (como un error gramatical común) usando las herramientas de OE paso a paso. En LinkedIn, se comparten infografías sobre la productividad y el crecimiento profesional.</p>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp -->
+                 <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">5. Comunicación Directa y Personalizada</h3>
+                        <p class="text-lg text-gray-300 mb-4"><strong>Canales:</strong> WhatsApp, Email Marketing.</p>
+                        <p class="text-gray-400 leading-relaxed">Aportamos valor constante en los canales directos. Con **WhatsApp**, implementamos **"El Tip Diario del No-Curso"**, una píldora de conocimiento diaria (un video-tutorial, un hack). El **email** se convierte en un **"Weekly Debrief"** que resume el progreso del usuario, comparte avances de la serie documental y recomienda clases personalizadas.</p>
+                    </div>
+                    <div class="p-4 bg-[#111] rounded-2xl border border-gray-800" data-aos="fade-left">
+                        <p class="font-mono text-sm text-gray-500 mb-2">// Ejemplo: Mensaje de WhatsApp</p>
+                        <p class="text-white"><strong>El Tip Diario del No-Curso 💡</strong></p>
+                         <div class="mt-2 p-3 bg-black rounded-md">
+                           <p class="text-sm text-gray-300">¡Hola [Nombre]! Aquí tu tip de hoy: ¿Sabías que puedes pedirle a Jenny que te corrija un email antes de enviarlo? 🔥 Mira cómo en este video de 30s. [Link]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOSING SECTION -->
+    <section class="py-40 text-center px-6">
+        <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-7xl font-black tracking-tighter text-gray-500">
+                Después de ver cómo funciona...
+            </h2>
+             <p class="text-4xl md:text-7xl font-black uppercase tracking-tighter gradient-text mt-4">
+                ¿Todavía lo llamarías un curso?
+            </p>
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.from("#hero-title", { duration: 1, y: 50, opacity: 0, delay: 0.2, ease: "power3.out" });
+        gsap.from("#hero-subtitle", { duration: 1, y: 50, opacity: 0, delay: 0.4, ease: "power3.out" });
+
+        // Slogan Animation
+        gsap.from("#slogan-pre-title, #slogan, #slogan-alternatives", {
+            scrollTrigger: {
+                trigger: "#slogan",
+                start: "top 80%",
+            },
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            stagger: 0.2
+        });
+
+        // Deconstruction Section Animation
+        gsap.from(".grid > .p-8, .grid > .flex", {
+            scrollTrigger: {
+                trigger: ".grid > .p-8, .grid > .flex",
+                start: "top 80%",
+                stagger: 0.15
+            },
+            duration: 0.8,
+            y: 40,
+            opacity: 0,
+            ease: "power3.out"
+        });
+        
+        // Synergy Section Animation
+        gsap.from("#step1", {
+            scrollTrigger: {
+                trigger: "#step1",
+                start: "top 75%",
+            },
+            duration: 1,
+            x: -50,
+            opacity: 0,
+            ease: "power3.out"
+        });
+        gsap.from("#step2", {
+            scrollTrigger: {
+                trigger: "#step2",
+                start: "top 75%",
+            },
+            duration: 1,
+            x: 50,
+            opacity: 0,
+            ease: "power3.out"
+        });
+        
+        // Advertising Approach Animation
+        gsap.from(".space-y-12 > .grid", {
+            scrollTrigger: {
+                trigger: ".space-y-12 > .grid",
+                start: "top 85%",
+                stagger: 0.2
+            },
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out"
+        });
+
+        // Closing Section Animation
+        gsap.from("section:last-of-type h2, section:last-of-type p", {
+            scrollTrigger: {
+                trigger: "section:last-of-type",
+                start: "top 70%"
+            },
+            duration: 1.2,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            stagger: 0.2
+        });
+
+
+        // Interactive Card Shine Effect
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+    </script>
+</body>
+</html>
